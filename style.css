@@ -1,12 +1,24 @@
-*{padding: 0; margin: 0; box-sizing: border-box;}
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+
+/* ================= HERO ================= */
+
 header{
 	width: 100%;
 	height: 100vh;
 	background: url('images/bg-hero.jpg');
 	background-size: cover;
+	background-position: center;
 	position: relative;
 	color: white;
+	overflow: hidden;
 }
+
+
 .overlay{
 	width: 100%;
 	height: 100%;
@@ -15,6 +27,8 @@ header{
 	left: 0;
 	background: rgba(0, 0, 0, 0.9);
 }
+
+
 nav{
 	width: 100%;
 	height: 100px;
@@ -24,10 +38,14 @@ nav{
 	justify-content: space-around;
 	align-items: center;
 }
+
+
 .logo{
 	font-size: 2.5em;
 	color: orange;
 }
+
+
 .menu a{
 	text-decoration: none;
 	color: white;
@@ -35,6 +53,7 @@ nav{
 	margin: 0 5px;
 	font-size: 16px;
 }
+
 
 .menu a:first-child{
 	color: orange;
@@ -49,11 +68,16 @@ nav{
 	border-radius: 8px;
 }
 
+
 .menu i{
 	font-size: 25px;
 	padding: 0 2px;
 }
-.container{
+
+
+/* ================= HERO CONTENT ================= */
+
+.hero-container{
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -62,28 +86,39 @@ nav{
 	position: absolute;
 	z-index: 2;
 }
+
+
 .left{
 	flex-basis: 45%;
 }
+
+
 .right{
 	flex-basis: 35%;
 }
+
 
 .right img{
 	width: 100%;
 	animation: 10s anim linear infinite;
 }
 
+
 .left h1{
 	font-size: 5em;
 }
+
+
 #del{
 	color: orange;
 }
+
+
 .left p{
 	margin: 15px 0;
 	line-height: 1.9rem;
 }
+
 
 .left a{
 	text-decoration: none;
@@ -93,30 +128,223 @@ nav{
 	border-radius: 50% 0 50% 0;
 }
 
+
 @keyframes anim{
+
 	0%{
 		transform: rotate(0deg);
 	}
+
 	100%{
 		transform: rotate(360deg);
 	}
+
 }
 
 
+/* ================================================= */
+/*              BOOTSTRAP SECTION                    */
+/* ================================================= */
+
+.bootstrap-section{
+	background: #f8f9fa;
+	min-height: 700px;
+}
 
 
+/* Section heading */
+
+.bootstrap-section h2{
+	color: #222;
+}
 
 
+/* Bootstrap cards */
+
+.bootstrap-section .card{
+	border: none;
+	border-radius: 15px;
+	overflow: hidden;
+	transition: 0.3s;
+}
 
 
+.bootstrap-section .card:hover{
+	transform: translateY(-10px);
+	box-shadow: 0 15px 30px rgba(0,0,0,0.2) !important;
+}
 
 
+/* Card images */
+
+.bootstrap-section .card-img-top{
+	height: 230px;
+	object-fit: cover;
+}
 
 
+/* Card title */
+
+.bootstrap-section .card-title{
+	font-size: 24px;
+	font-weight: bold;
+}
 
 
+/* Bootstrap warning button */
+
+.bootstrap-section .btn-warning{
+	background: orange;
+	border-color: orange;
+	color: white;
+}
 
 
+.bootstrap-section .btn-warning:hover{
+	background: #e69500;
+	border-color: #e69500;
+}
 
 
+/* Alert */
 
+.bootstrap-section .alert{
+	border-radius: 10px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+	background: #111 !important;
+}
+
+
+footer h4{
+	font-size: 28px;
+}
+
+
+footer h5{
+	color: orange;
+	margin-bottom: 20px;
+}
+
+
+footer p{
+	color: #ccc;
+	line-height: 1.8;
+}
+
+
+footer a:hover{
+	color: orange !important;
+}
+
+
+footer hr{
+	border-color: #555;
+}
+
+
+/* ================================================= */
+/*              RESPONSIVE DESIGN                    */
+/* ================================================= */
+
+@media(max-width: 992px){
+
+	nav{
+		justify-content: space-between;
+		padding: 0 30px;
+	}
+
+	.menu a{
+		padding: 8px;
+		margin: 0;
+		font-size: 13px;
+	}
+
+	.menu i{
+		font-size: 16px;
+	}
+
+	.logo{
+		font-size: 2em;
+	}
+
+	.left h1{
+		font-size: 3.5em;
+	}
+
+}
+
+
+@media(max-width: 768px){
+
+	header{
+		height: auto;
+		min-height: 100vh;
+	}
+
+	nav{
+		height: auto;
+		padding: 20px;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.menu{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.hero-container{
+		position: relative;
+		min-height: 100vh;
+		padding: 150px 20px 50px;
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.left{
+		flex-basis: auto;
+	}
+
+	.right{
+		flex-basis: auto;
+		width: 70%;
+		margin-top: 30px;
+	}
+
+	.left h1{
+		font-size: 3em;
+	}
+
+	.left p{
+		line-height: 1.6rem;
+	}
+
+}
+
+
+@media(max-width: 480px){
+
+	.logo{
+		font-size: 1.8em;
+	}
+
+	.menu a{
+		font-size: 11px;
+		padding: 5px;
+	}
+
+	.left h1{
+		font-size: 2.4em;
+	}
+
+	.right{
+		width: 85%;
+	}
+
+}
